@@ -615,5 +615,43 @@ fetch(csvURL)
     '<tr><td colspan="3">Unable to load leaderboard</td></tr>';
 });
 </script>
+<section id="live-schedule">
+  <h2>📅 LIVE TOURNAMENT SCHEDULE</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Match</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Team 1</th>
+        <th>Team 2</th>
+        <th>Status</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody id="schedule-data">
+      <tr><td colspan="7">Loading...</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<script>
+const scheduleURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgYSA6PQez7a80NhpyQeg5mWgUh8eFR_fapzvK1qcFc4iQgUQ9WcQlnI8wK65NzG35g7lLwZ2ltPu7/pub?gid=2126909306&single=true&output=csv";
+
+fetch(scheduleURL)
+.then(response => response.text())
+.then(csv => {
+  const rows = csv.trim().split(/\r?\n/).slice(1);
+  document.getElementById("schedule-data").innerHTML =
+    rows.map(row => {
+      const cols = row.split(",");
+      return `<tr>${cols.slice(0,7).map(col => `<td>${col}</td>`).join("")}</tr>`;
+    }).join("");
+})
+.catch(() => {
+  document.getElementById("schedule-data").innerHTML =
+    '<tr><td colspan="7">Unable to load schedule</td></tr>';
+});
+</script>
 </body>
 </html>
