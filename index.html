@@ -653,5 +653,25 @@ fetch(scheduleURL)
     '<tr><td colspan="7">Unable to load schedule</td></tr>';
 });
 </script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut
+} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC6o0bsJasjb1pGQ4DIURgBc1zOGplimQM",
+  authDomain: "luminox7-admin.firebaseapp.com",
+  projectId: "luminox7-admin",
+  storageBucket: "luminox7-admin.firebasestorage.app",
+  messagingSenderId: "978493775972",
+  appId: "1:978493775972:web:6f78ebeef813337319ff71"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+</script>
 </body>
 </html>
