@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,706 +6,244 @@
 <meta name="theme-color" content="#090612">
 <meta name="description" content="LUMINOX7 Esports - Free Fire tournaments, player rankings and gaming events.">
 <title>LUMINOX7 | Esports Arena</title>
-
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-:root {
-  --bg: #090612;
-  --panel: #151024;
-  --purple: #a855f7;
-  --neon: #c084fc;
-  --white: #f8f5ff;
-  --muted: #aaa0bb;
-}
-
-body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(9,6,18,.95);
-  border-bottom: 1px solid #38204f;
-  padding: 16px 6%;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.logo {
-  font-size: 25px;
-  font-weight: 900;
-  color: var(--neon);
-  letter-spacing: 2px;
-  text-shadow: 0 0 15px #a855f7;
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 17px;
-  font-size: 13px;
-}
-
-.nav-links a:hover {
-  color: var(--neon);
-}
-
-.hero {
-  min-height: 570px;
-  padding: 90px 7%;
-  display: flex;
-  align-items: center;
-  background:
-    radial-gradient(ellipse at 80% 40%, #532079 0%, transparent 45%),
-    linear-gradient(120deg,#090612,#1b1030);
-}
-
-.hero-content {
-  max-width: 750px;
-}
-
-.tag {
-  display: inline-block;
-  color: var(--neon);
-  border: 1px solid #8b42bd;
-  padding: 7px 14px;
-  border-radius: 30px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-size: clamp(43px,8vw,82px);
-  line-height: 1.05;
-  margin-bottom: 20px;
-  font-weight: 900;
-}
-
-.hero h1 span {
-  color: var(--neon);
-  text-shadow: 0 0 25px #a855f7;
-}
-
-.hero p {
-  color: var(--muted);
-  max-width: 520px;
-  margin-bottom: 30px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 13px 22px;
-  border-radius: 9px;
-  background: var(--purple);
-  color: white;
-  font-weight: bold;
-  border: 1px solid var(--purple);
-  cursor: pointer;
-  margin: 5px;
-}
-
-.btn:hover {
-  background: #7e22ce;
-  box-shadow: 0 0 20px #a855f7;
-}
-
-.btn-outline {
-  background: transparent;
-}
-
-section {
-  padding: 75px 7%;
-  scroll-margin-top: 75px;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 38px;
-}
-
-.section-title h2 {
-  font-size: clamp(28px,5vw,40px);
-  color: var(--neon);
-}
-
-.section-title p {
-  color: var(--muted);
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-  gap: 20px;
-}
-
-.card {
-  background: var(--panel);
-  border: 1px solid #392351;
-  padding: 25px;
-  border-radius: 15px;
-  transition: .3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: var(--neon);
-  box-shadow: 0 0 20px #61228b55;
-}
-
-.card h3 {
-  color: var(--neon);
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.icon {
-  font-size: 35px;
-  margin-bottom: 12px;
-}
-
-.tournament {
-  background: linear-gradient(130deg,#211037,#10091e);
-  border: 1px solid #7237a0;
-  border-radius: 18px;
-  padding: 30px;
-  max-width: 850px;
-  margin: auto;
-  text-align: center;
-}
-
-.tournament h3 {
-  font-size: 28px;
-  color: var(--neon);
-  margin-bottom: 15px;
-}
-
-.details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(130px,1fr));
-  gap: 12px;
-  margin: 25px 0;
-}
-
-.detail {
-  background: #0d0917;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.detail strong {
-  display: block;
-  color: var(--neon);
-  font-size: 20px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--panel);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-th,td {
-  padding: 15px 10px;
-  text-align: center;
-  border-bottom: 1px solid #38234c;
-  font-size: 14px;
-}
-
-th {
-  color: var(--neon);
-  background: #211334;
-}
-
-tr:last-child td {
-  border-bottom: none;
-}
-
-.table-wrap {
-  overflow-x: auto;
-}
-
-form {
-  max-width: 600px;
-  margin: auto;
-  background: var(--panel);
-  padding: 25px;
-  border: 1px solid #392351;
-  border-radius: 15px;
-}
-
-input,select,textarea {
-  width: 100%;
-  padding: 14px;
-  margin: 9px 0 17px;
-  border-radius: 8px;
-  border: 1px solid #563573;
-  background: #0d0917;
-  color: white;
-  font-size: 15px;
-}
-
-label {
-  font-size: 14px;
-  color: var(--neon);
-}
-
-form button {
-  width: 100%;
-}
-
-.note {
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 12px;
-}
-
-.contact {
-  text-align: center;
-}
-
-footer {
-  background: #06040c;
-  text-align: center;
-  padding: 28px;
-  border-top: 1px solid #38204f;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-footer strong {
-  color: var(--neon);
-}
-
-@media(max-width:600px) {
-  header {
-    padding: 14px 4%;
-  }
-
-  nav {
-    justify-content: center;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .hero {
-    min-height: 480px;
-    padding: 65px 6%;
-  }
-
-  section {
-    padding: 55px 5%;
-  }
-
-  .card {
-    padding: 20px;
-  }
-}
+:root{--bg:#090612;--panel:#151024;--purple:#a855f7;--neon:#c084fc;--white:#f8f5ff;--muted:#aaa0bb;--line:#392351}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:rgba(9,6,18,.96);border-bottom:1px solid #38204f;padding:16px 6%}
+nav{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:900;color:var(--neon);letter-spacing:2px;text-shadow:0 0 15px #a855f7}
+.nav-links{display:flex;flex-wrap:wrap;gap:17px;font-size:13px}
+.nav-links a:hover{color:var(--neon)}
+.hero{min-height:570px;padding:90px 7%;display:flex;align-items:center;background:radial-gradient(ellipse at 80% 40%,#532079 0%,transparent 45%),linear-gradient(120deg,#090612,#1b1030)}
+.hero-content{max-width:750px}
+.tag{display:inline-block;color:var(--neon);border:1px solid #8b42bd;padding:7px 14px;border-radius:30px;font-size:12px;letter-spacing:2px;margin-bottom:20px}
+.hero h1{font-size:clamp(43px,8vw,82px);line-height:1.05;margin-bottom:20px;font-weight:900}
+.hero h1 span{color:var(--neon);text-shadow:0 0 25px #a855f7}
+.hero p{color:var(--muted);max-width:520px;margin-bottom:30px}
+.btn{display:inline-block;padding:13px 22px;border-radius:9px;background:var(--purple);color:white;font-weight:bold;border:1px solid var(--purple);cursor:pointer;margin:5px}
+.btn:hover{background:#7e22ce;box-shadow:0 0 20px #a855f7}
+.btn-outline{background:transparent}
+section{padding:75px 7%;scroll-margin-top:75px}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title h2{font-size:clamp(28px,5vw,40px);color:var(--neon)}
+.section-title p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);padding:25px;border-radius:15px;transition:.3s}
+.card:hover{transform:translateY(-4px);border-color:var(--neon);box-shadow:0 0 20px #61228b55}
+.card h3{color:var(--neon);margin-bottom:12px}
+.card p{color:var(--muted);font-size:14px}
+.icon{font-size:35px;margin-bottom:12px}
+.tournament{background:linear-gradient(130deg,#211037,#10091e);border:1px solid #7237a0;border-radius:18px;padding:30px;max-width:850px;margin:auto;text-align:center}
+.tournament h3{font-size:28px;color:var(--neon);margin-bottom:15px}
+.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:25px 0}
+.detail{background:#0d0917;padding:15px;border-radius:10px}
+.detail strong{display:block;color:var(--neon);font-size:20px}
+table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:12px;overflow:hidden}
+th,td{padding:13px 10px;text-align:center;border-bottom:1px solid #38234c;font-size:14px}
+th{color:var(--neon);background:#211334}
+tr:last-child td{border-bottom:none}
+.table-wrap{overflow-x:auto}
+.note{color:var(--muted);font-size:12px;margin-top:12px}
+.contact{text-align:center}
+footer{background:#06040c;text-align:center;padding:28px;border-top:1px solid #38204f;color:var(--muted);font-size:13px}
+footer strong{color:var(--neon)}
+.admin-wrap{max-width:950px;margin:auto;background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:16px}
+.admin-wrap h2,.admin-wrap h3{color:var(--neon);margin-bottom:12px}
+.admin-form{max-width:430px;margin:18px auto}
+.admin-form input{display:block;width:100%;padding:13px;margin:10px 0;border-radius:8px;border:1px solid #563573;background:#0d0917;color:white;font-size:15px}
+.admin-status{color:var(--muted);font-size:13px;min-height:24px;margin:8px 0}
+.admin-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0}
+.stat{background:#0d0917;border:1px solid #563573;border-radius:12px;padding:18px;text-align:center;min-width:150px}
+.stat strong{display:block;color:var(--neon);font-size:28px}
+.hidden{display:none!important}
+.admin-table-wrap{overflow-x:auto;margin-top:15px}
+.admin-table{min-width:650px}
+.small-btn{padding:9px 14px;font-size:13px}
+@media(max-width:600px){header{padding:14px 4%}nav{justify-content:center}.nav-links{justify-content:center;gap:12px}.hero{min-height:480px;padding:65px 6%}section{padding:55px 5%}.card{padding:20px}.admin-wrap{padding:16px}}
 </style>
 </head>
-
 <body>
-
-<header>
-<nav>
-  <a class="logo" href="#home">LUMINOX7</a>
-  <div class="nav-links">
-    <a href="#home">HOME</a>
-    <a href="#tournament">TOURNAMENT</a>
-    <a href="#leaderboard">RANKING</a>
-    <a href="#schedule">SCHEDULE</a>
-    <a href="#register">REGISTER</a>
-    <a href="#contact">CONTACT</a>
-  </div>
-</nav>
-</header>
-
-<!-- HOME -->
-<section class="hero" id="home">
-<div class="hero-content">
-  <div class="tag">WELCOME TO LUMINOX7 ESPORTS</div>
-
-  <h1>LEVEL UP<br>
-  YOUR <span>GAME.</span></h1>
-
-  <p>
-    Enter the arena. Challenge the best players.
-    Show your skills and become a legend.
-    Your esports journey starts here.
-  </p>
-
-  <a href="#tournament" class="btn">EXPLORE TOURNAMENT</a>
-  <a href="#register" class="btn btn-outline">JOIN THE ARENA</a>
+<header><nav>
+<a class="logo" href="#home">LUMINOX7</a>
+<div class="nav-links">
+<a href="#home">HOME</a><a href="#tournament">TOURNAMENT</a><a href="#leaderboard">RANKING</a><a href="#schedule">SCHEDULE</a><a href="#register">REGISTER</a><a href="#contact">CONTACT</a><a href="#admin">ADMIN</a>
 </div>
-</section>
+</nav></header>
 
-<!-- FEATURES -->
-<section>
-<div class="section-title">
-  <h2>OUR ARENA</h2>
-  <p>Everything for competitive gaming</p>
-</div>
+<section class="hero" id="home"><div class="hero-content">
+<div class="tag">WELCOME TO LUMINOX7 ESPORTS</div>
+<h1>LEVEL UP<br>YOUR <span>GAME.</span></h1>
+<p>Enter the arena. Challenge the best players. Show your skills and become a legend. Your esports journey starts here.</p>
+<a href="#tournament" class="btn">EXPLORE TOURNAMENT</a>
+<a href="#register" class="btn btn-outline">JOIN THE ARENA</a>
+</div></section>
 
+<section><div class="section-title"><h2>OUR ARENA</h2><p>Everything for competitive gaming</p></div>
 <div class="cards">
-  <div class="card">
-    <div class="icon">🏆</div>
-    <h3>Tournaments</h3>
-    <p>Join exciting Free Fire esports competitions.</p>
-  </div>
+<div class="card"><div class="icon">🏆</div><h3>Tournaments</h3><p>Join exciting Free Fire esports competitions.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Top Players</h3><p>Discover the best players in our leaderboard.</p></div>
+<div class="card"><div class="icon">🎮</div><h3>Community</h3><p>Connect with fellow gamers and compete together.</p></div>
+</div></section>
 
-  <div class="card">
-    <div class="icon">⚡</div>
-    <h3>Top Players</h3>
-    <p>Discover the best players in our leaderboard.</p>
-  </div>
-
-  <div class="card">
-    <div class="icon">🎮</div>
-    <h3>Community</h3>
-    <p>Connect with fellow gamers and compete together.</p>
-  </div>
+<section id="tournament"><div class="section-title"><h2>FREE FIRE TOURNAMENT</h2><p>Enter the battlefield</p></div>
+<div class="tournament"><div class="tag">UPCOMING EVENT</div><h3>LUMINOX7 BATTLE ARENA</h3><p>Compete with other players and prove your skills.</p>
+<div class="details">
+<div class="detail"><strong>Solo / Squad</strong>Mode</div><div class="detail"><strong>Custom</strong>Match Type</div><div class="detail"><strong>Online</strong>Platform</div><div class="detail"><strong>Coming Soon</strong>Date</div>
 </div>
+<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZRKGfaKoizgXTnZUUyr3b8GAKoSO2xMLb9KG-v3TccyUxMQ/viewform" target="_blank" rel="noopener">Register Now</a>
+</div></section>
+
+<section id="leaderboard"><div class="section-title"><h2>LEADERBOARD</h2><p>Top ranked players</p></div>
+<div class="table-wrap"><table><thead><tr><th>RANK</th><th>PLAYER</th><th>POINTS</th></tr></thead><tbody id="leaderboard-data"><tr><td colspan="3">Loading...</td></tr></tbody></table></div>
 </section>
 
-<!-- TOURNAMENT -->
-<section id="tournament">
-<div class="section-title">
-  <h2>FREE FIRE TOURNAMENT</h2>
-  <p>Enter the battlefield</p>
-</div>
-
-<div class="tournament">
-  <div class="tag">UPCOMING EVENT</div>
-  <h3>LUMINOX7 BATTLE ARENA</h3>
-  <p>Compete with other players and prove your skills.</p>
-
-  <div class="details">
-    <div class="detail">
-      <strong>Solo / Squad</strong>
-      Mode
-    </div>
-    <div class="detail">
-      <strong>Custom</strong>
-      Match Type
-    </div>
-    <div class="detail">
-      <strong>Online</strong>
-      Platform
-    </div>
-    <div class="detail">
-      <strong>Coming Soon</strong>
-      Date
-    </div>
-  </div>
-
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZRKGfaKoizgXTnZUUyr3b8GAKoSO2xMLb9KG-v3TccyUxMQ/viewform?usp=publish-editor" target="_blank">
-  Register Now
-</a>
-</div>
+<section id="schedule"><div class="section-title"><h2>MATCH SCHEDULE</h2><p>Upcoming esports events</p></div>
+<div class="table-wrap"><table><thead><tr><th>Match</th><th>Date</th><th>Time</th><th>Team 1</th><th>Team 2</th><th>Status</th><th>Result</th></tr></thead><tbody id="schedule-data"><tr><td colspan="7">Loading...</td></tr></tbody></table></div>
 </section>
 
-<!-- LEADERBOARD -->
-<section id="leaderboard">
-<div class="section-title">
-  <h2>LEADERBOARD</h2>
-  <p>Top ranked players</p>
-</div>
+<section id="register"><div class="section-title"><h2>PLAYER REGISTRATION</h2><p>Join the LUMINOX7 arena</p></div>
+<div class="tournament"><p>Complete the official LUMINOX7 registration form. Your registration will be saved to the linked response sheet.</p>
+<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZRKGfaKoizgXTnZUUyr3b8GAKoSO2xMLb9KG-v3TccyUxMQ/viewform" target="_blank" rel="noopener">OPEN REGISTRATION FORM</a>
+</div></section>
 
-<div class="table-wrap">
-<table>
-<thead>
-<tr>
-  <th>RANK</th>
-  <th>PLAYER</th>
-  <th>POINTS</th>
-  <th>STATUS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>01</td>
-  <td>Player One</td>
-  <td>0</td>
-  <td>New</td>
-</tr>
-<tr>
-  <td>02</td>
-  <td>Player Two</td>
-  <td>0</td>
-  <td>New</td>
-</tr>
-<tr>
-  <td>03</td>
-  <td>Player Three</td>
-  <td>0</td>
-  <td>New</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="note">Demo rankings. Update player names and points after your matches.</p>
+<section id="contact"><div class="section-title"><h2>CONTACT US</h2><p>Connect with LUMINOX7</p></div>
+<div class="contact"><div class="card"><h3>LUMINOX7 ESPORTS</h3><p>For tournament updates and enquiries, contact our team.</p><p style="margin-top:15px">Email: Add your email here</p><p>Facebook: Add your page link here</p></div></div>
 </section>
 
-<!-- SCHEDULE -->
-<section id="schedule">
-<div class="section-title">
-  <h2>MATCH SCHEDULE</h2>
-  <p>Upcoming esports events</p>
+<section id="admin"><div class="section-title"><h2>🔐 LUMINOX7 ADMIN PANEL</h2><p>Authorized administrator access only</p></div>
+<div class="admin-wrap">
+<div id="admin-login">
+<h3>Admin Login</h3>
+<div class="admin-form">
+<input id="admin-email" type="email" placeholder="Admin email" autocomplete="username">
+<input id="admin-password" type="password" placeholder="Password" autocomplete="current-password">
+<button class="btn" id="login-btn" type="button">LOGIN</button>
+<p class="admin-status" id="login-message" aria-live="polite"></p>
 </div>
-
-<div class="cards">
-  <div class="card">
-    <h3>ROUND 01</h3>
-    <p>Date: To be announced</p>
-    <p>Match: Group Stage</p>
-    <p>Status: Upcoming</p>
-  </div>
-
-  <div class="card">
-    <h3>ROUND 02</h3>
-    <p>Date: To be announced</p>
-    <p>Match: Semi Final</p>
-    <p>Status: Upcoming</p>
-  </div>
-
-  <div class="card">
-    <h3>FINAL</h3>
-    <p>Date: To be announced</p>
-    <p>Match: Grand Final</p>
-    <p>Status: Upcoming</p>
-  </div>
 </div>
-</section>
-
-<!-- REGISTRATION -->
-<section id="register">
-<div class="section-title">
-  <h2>PLAYER REGISTRATION</h2>
-  <p>Join the LUMINOX7 arena</p>
+<div id="admin-dashboard" class="hidden">
+<div class="admin-toolbar"><div><h3>Dashboard</h3><p class="note" id="admin-welcome">Signed in</p></div><button class="btn small-btn" id="refresh-btn" type="button">REFRESH</button><button class="btn btn-outline small-btn" id="logout-btn" type="button">LOG OUT</button></div>
+<div class="stat"><strong id="player-count">0</strong>Registered players in Firestore</div>
+<p class="admin-status" id="dashboard-message" aria-live="polite"></p>
+<h3 style="margin-top:20px">Registered Players</h3>
+<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Player Name</th><th>IGN</th><th>Free Fire UID</th><th>Team</th><th>Role</th></tr></thead><tbody id="players-data"><tr><td colspan="5">No data loaded.</td></tr></tbody></table></div>
+<p class="note">Only data stored in the Firestore <b>players</b> collection appears here. Google Sheets rows do not automatically copy into Firestore.</p>
 </div>
+</div></section>
 
-<form id="registrationForm">
-  <label for="player">Player Name</label>
-  <input id="player" type="text" placeholder="Enter your name" required>
-
-  <label for="uid">Free Fire UID</label>
-  <input id="uid" type="text" placeholder="Enter your UID" required>
-
-  <label for="gameMode">Game Mode</label>
-  <select id="gameMode" required>
-    <option value="">Select mode</option>
-    <option>Solo</option>
-    <option>Duo</option>
-    <option>Squad</option>
-  </select>
-
-  <label for="phone">Contact Information</label>
-  <input id="phone" type="text" placeholder="Enter your contact">
-
-  <button class="btn" type="submit">SUBMIT REGISTRATION</button>
-
-  <p class="note">
-    Demo form only. Your information is not sent or stored.
-    A registration service must be connected for real submissions.
-  </p>
-</form>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<div class="section-title">
-  <h2>CONTACT US</h2>
-  <p>Connect with LUMINOX7</p>
-</div>
-
-<div class="contact">
-  <div class="card">
-    <h3>LUMINOX7 ESPORTS</h3>
-    <p>For tournament updates and enquiries, contact our team.</p>
-    <p style="margin-top:15px">
-      Email: Add your email here
-    </p>
-    <p>Facebook: Add your page link here</p>
-  </div>
-</div>
-</section>
-
-<footer>
-  <strong>LUMINOX7</strong>
-  <p>Gaming Beyond Limits.</p>
-  <p>© 2026 LUMINOX7. All rights reserved.</p>
-</footer>
+<footer><strong>LUMINOX7</strong><p>Gaming Beyond Limits.</p><p>© 2026 LUMINOX7. All rights reserved.</p></footer>
 
 <script>
-document.getElementById("registrationForm")
-.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  alert(
-    "Thanks for your interest in LUMINOX7! " +
-    "This is a demo form. Registration is not yet saved."
-  );
-
-  this.reset();
-});
+const leaderboardCSV="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgYSA6PQez7a80NhpyQeg5mWgUh8eFR_fapzvK1qcFc4iQgUQ9WcQlnI8wK65NzG35g7lLwZ2ltPu7/pub?gid=268484019&single=true&output=csv";
+const scheduleCSV="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgYSA6PQez7a80NhpyQeg5mWgUh8eFR_fapzvK1qcFc4iQgUQ9WcQlnI8wK65NzG35g7lLwZ2ltPu7/pub?gid=2126909306&single=true&output=csv";
+function parseCSVLine(line){return line.split(",").map(v=>v.replace(/^"|"$/g,"").replace(/""/g,'"'))}
+async function loadCSV(url,targetId,colCount){
+ const target=document.getElementById(targetId);
+ try{
+  const response=await fetch(url);
+  if(!response.ok) throw new Error("CSV load failed");
+  const csv=await response.text();
+  const rows=csv.trim().split(/\r?\n/).slice(1).filter(Boolean);
+  target.replaceChildren();
+  rows.forEach(line=>{
+   const tr=document.createElement("tr");
+   parseCSVLine(line).slice(0,colCount).forEach(value=>{
+    const td=document.createElement("td");td.textContent=value;tr.appendChild(td);
+   });
+   target.appendChild(tr);
+  });
+  if(!rows.length){const tr=document.createElement("tr");const td=document.createElement("td");td.colSpan=colCount;td.textContent="No records yet";tr.appendChild(td);target.appendChild(tr)}
+ }catch(e){target.textContent="Unable to load data right now"}
+}
+loadCSV(leaderboardCSV,"leaderboard-data",3);
+loadCSV(scheduleCSV,"schedule-data",7);
 </script>
-<section id="live-leaderboard">
-  <h2>🏆 LIVE LEADERBOARD</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Player Name</th>
-        <th>Points</th>
-      </tr>
-    </thead>
-    <tbody id="leaderboard-data">
-      <tr><td colspan="3">Loading...</td></tr>
-    </tbody>
-  </table>
-</section>
 
-<script>
-const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgYSA6PQez7a80NhpyQeg5mWgUh8eFR_fapzvK1qcFc4iQgUQ9WcQlnI8wK65NzG35g7lLwZ2ltPu7/pub?gid=268484019&single=true&output=csv";
-
-fetch(csvURL)
-.then(response => response.text())
-.then(csv => {
-  const rows = csv.trim().split(/\r?\n/).slice(1);
-  document.getElementById("leaderboard-data").innerHTML =
-    rows.map(row => {
-      const cols = row.split(",");
-      return `<tr><td>${cols[0]}</td><td>${cols[1]}</td><td>${cols[2]}</td></tr>`;
-    }).join("");
-})
-.catch(() => {
-  document.getElementById("leaderboard-data").innerHTML =
-    '<tr><td colspan="3">Unable to load leaderboard</td></tr>';
-});
-</script>
-<section id="live-schedule">
-  <h2>📅 LIVE TOURNAMENT SCHEDULE</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Match</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Team 1</th>
-        <th>Team 2</th>
-        <th>Status</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-    <tbody id="schedule-data">
-      <tr><td colspan="7">Loading...</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<script>
-const scheduleURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgYSA6PQez7a80NhpyQeg5mWgUh8eFR_fapzvK1qcFc4iQgUQ9WcQlnI8wK65NzG35g7lLwZ2ltPu7/pub?gid=2126909306&single=true&output=csv";
-
-fetch(scheduleURL)
-.then(response => response.text())
-.then(csv => {
-  const rows = csv.trim().split(/\r?\n/).slice(1);
-  document.getElementById("schedule-data").innerHTML =
-    rows.map(row => {
-      const cols = row.split(",");
-      return `<tr>${cols.slice(0,7).map(col => `<td>${col}</td>`).join("")}</tr>`;
-    }).join("");
-})
-.catch(() => {
-  document.getElementById("schedule-data").innerHTML =
-    '<tr><td colspan="7">Unable to load schedule</td></tr>';
-});
-</script>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  signOut
-} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyC6o0bsJasjb1pGQ4DIURgBc1zOGplimQM",
-  authDomain: "luminox7-admin.firebaseapp.com",
-  projectId: "luminox7-admin",
-  storageBucket: "luminox7-admin.firebasestorage.app",
-  messagingSenderId: "978493775972",
-  appId: "1:978493775972:web:6f78ebeef813337319ff71"
+const firebaseConfig={
+ apiKey:"AIzaSyC6o0bsJasjb1pGQ4DIURgBc1zOGplimQM",
+ authDomain:"luminox7-admin.firebaseapp.com",
+ projectId:"luminox7-admin",
+ storageBucket:"luminox7-admin.firebasestorage.app",
+ messagingSenderId:"978493775972",
+ appId:"1:978493775972:web:6f78ebeef813337319ff71"
 };
+const ADMIN_UID="pULHC2odwVaiuteKwWth6O2VXzq1";
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const db=getFirestore(app);
+const loginBox=document.getElementById("admin-login");
+const dashboard=document.getElementById("admin-dashboard");
+const loginMessage=document.getElementById("login-message");
+const dashboardMessage=document.getElementById("dashboard-message");
+const playersBody=document.getElementById("players-data");
+const playerCount=document.getElementById("player-count");
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-</script>
-<section id="admin-login" style="max-width:400px;margin:40px auto;padding:25px;background:#171329;color:white;border-radius:15px;text-align:center;">
-  <h2>🔐 LUMINOX7 ADMIN LOGIN</h2>
-
-  <input id="admin-email" type="email" placeholder="Admin Email"
-    style="width:90%;padding:12px;margin:10px 0;">
-
-  <input id="admin-password" type="password" placeholder="Password"
-    style="width:90%;padding:12px;margin:10px 0;">
-
-  <button id="login-btn" style="padding:12px 25px;">
-    Login
-  </button>
-
-  <p id="login-message"></p>
-</section>
-
-<script type="module">
-import { getAuth, signInWithEmailAndPassword }
-from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
-
-const auth = getAuth();
-
-document.getElementById("login-btn").addEventListener("click", async () => {
-  const email = document.getElementById("admin-email").value;
-  const password = document.getElementById("admin-password").value;
-  const message = document.getElementById("login-message");
-
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    message.textContent = "Login successful!";
-  } catch (error) {
-    message.textContent = "Login failed. Check your email and password.";
-  }
+document.getElementById("login-btn").addEventListener("click",async()=>{
+ const email=document.getElementById("admin-email").value.trim();
+ const password=document.getElementById("admin-password").value;
+ loginMessage.textContent="Signing in...";
+ try{await signInWithEmailAndPassword(auth,email,password)}
+ catch(error){loginMessage.textContent="Login failed. Check your email and password."}
 });
+document.getElementById("logout-btn").addEventListener("click",()=>signOut(auth));
+document.getElementById("refresh-btn").addEventListener("click",loadPlayers);
+
+onAuthStateChanged(auth,async user=>{
+ if(user && user.uid===ADMIN_UID){
+  loginBox.classList.add("hidden");dashboard.classList.remove("hidden");
+  document.getElementById("admin-welcome").textContent="Signed in as "+user.email;
+  await loadPlayers();
+ }else{
+  dashboard.classList.add("hidden");loginBox.classList.remove("hidden");
+  if(user) await signOut(auth);
+ }
+});
+async function loadPlayers(){
+ dashboardMessage.textContent="Loading player records...";
+ playersBody.replaceChildren();
+ try{
+  const snapshot=await getDocs(collection(db,"players"));
+  playerCount.textContent=snapshot.size;
+  if(snapshot.empty){
+   const tr=document.createElement("tr"),td=document.createElement("td");
+   td.colSpan=5;td.textContent="No player records in Firestore yet.";
+   tr.appendChild(td);playersBody.appendChild(tr);
+   dashboardMessage.textContent="Firestore connected. No player documents have been added yet.";
+   return;
+  }
+  snapshot.forEach(docSnap=>{
+   const p=docSnap.data();
+   const pick=(...keys)=>{for(const k of keys){if(p[k]!==undefined && p[k]!==null)return String(p[k])}return "—"};
+   const tr=document.createElement("tr");
+   [pick("Player Name","playerName","name"),pick("IGN","In Game Name","ign"),pick("Free Fire UID","uid"),pick("Team Name","teamName"),pick("Captain or Player?","role")].forEach(value=>{
+    const td=document.createElement("td");td.textContent=value;tr.appendChild(td);
+   });
+   playersBody.appendChild(tr);
+  });
+  dashboardMessage.textContent="Player records loaded.";
+ }catch(error){
+  playerCount.textContent="—";
+  dashboardMessage.textContent="Could not load players. Check Firestore Rules and connection.";
+  const tr=document.createElement("tr"),td=document.createElement("td");
+  td.colSpan=5;td.textContent="Unable to load player records.";
+  tr.appendChild(td);playersBody.appendChild(tr);
+ }
+}
+<div style="text-align:center;margin:20px;">
+  <a href="YOUR_GOOGLE_SHEET_LINK"
+     target="_blank"
+     rel="noopener"
+     class="btn">
+     OPEN PLAYER DATABASE
+  </a>
+</div>
 </script>
 </body>
 </html>
