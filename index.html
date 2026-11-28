@@ -1,63 +1,203 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090612"><meta name="description" content="LUMINOX7 Esports - Free Fire tournaments, player rankings and gaming events.">
-<title>LUMINOX7 | Esports Arena</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMINOX7 | FC Mobile Esports</title>
 <style>
-:root{--bg:#090612;--panel:#151024;--purple:#a855f7;--neon:#c084fc;--white:#f8f5ff;--muted:#aaa0bb;--line:#392351}
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}body{background:var(--bg);color:var(--white);font-family:Arial,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;z-index:10;background:rgba(9,6,18,.96);border-bottom:1px solid #38204f;padding:16px 6%}nav{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
-.logo{font-size:25px;font-weight:900;color:var(--neon);letter-spacing:2px;text-shadow:0 0 15px #a855f7}.nav-links{display:flex;flex-wrap:wrap;gap:17px;font-size:13px}.nav-links a:hover{color:var(--neon)}
-.hero{min-height:570px;padding:90px 7%;display:flex;align-items:center;background:radial-gradient(ellipse at 80% 40%,#532079 0%,transparent 45%),linear-gradient(120deg,#090612,#1b1030)}.hero-content{max-width:750px}
-.tag{display:inline-block;color:var(--neon);border:1px solid #8b42bd;padding:7px 14px;border-radius:30px;font-size:12px;letter-spacing:2px;margin-bottom:20px}
-.hero h1{font-size:clamp(43px,8vw,82px);line-height:1.05;margin-bottom:20px;font-weight:900}.hero h1 span{color:var(--neon);text-shadow:0 0 25px #a855f7}.hero p{color:var(--muted);max-width:520px;margin-bottom:30px}
-.btn{display:inline-block;padding:13px 22px;border-radius:9px;background:var(--purple);color:white;font-weight:bold;border:1px solid var(--purple);cursor:pointer;margin:5px}.btn:hover{background:#7e22ce;box-shadow:0 0 20px #a855f7}.btn-outline{background:transparent}
-section{padding:75px 7%;scroll-margin-top:75px}.section-title{text-align:center;margin-bottom:38px}.section-title h2{font-size:clamp(28px,5vw,40px);color:var(--neon)}.section-title p{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}.card{background:var(--panel);border:1px solid var(--line);padding:25px;border-radius:15px;transition:.3s}.card:hover{transform:translateY(-4px);border-color:var(--neon);box-shadow:0 0 20px #61228b55}.card h3{color:var(--neon);margin-bottom:12px}.card p{color:var(--muted);font-size:14px}.icon{font-size:35px;margin-bottom:12px}
-.tournament{background:linear-gradient(130deg,#211037,#10091e);border:1px solid #7237a0;border-radius:18px;padding:30px;max-width:850px;margin:auto;text-align:center}.tournament h3{font-size:28px;color:var(--neon);margin-bottom:15px}
-.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:25px 0}.detail{background:#0d0917;padding:15px;border-radius:10px}.detail strong{display:block;color:var(--neon);font-size:20px}
-table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:12px;overflow:hidden}th,td{padding:13px 10px;text-align:center;border-bottom:1px solid #38234c;font-size:14px}th{color:var(--neon);background:#211334}tr:last-child td{border-bottom:none}.table-wrap{overflow-x:auto}
-.note{color:var(--muted);font-size:12px;margin-top:12px}.contact{text-align:center}footer{background:#06040c;text-align:center;padding:28px;border-top:1px solid #38204f;color:var(--muted);font-size:13px}footer strong{color:var(--neon)}
-.admin-wrap{max-width:950px;margin:auto;background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:16px}.admin-wrap h3{color:var(--neon);margin-bottom:12px}.admin-form{max-width:430px;margin:18px auto}.admin-form input{display:block;width:100%;padding:13px;margin:10px 0;border-radius:8px;border:1px solid #563573;background:#0d0917;color:white;font-size:15px}
-.admin-status{color:var(--muted);font-size:13px;min-height:24px;margin:8px 0}.admin-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0}.hidden{display:none!important}.small-btn{padding:9px 14px;font-size:13px}
-@media(max-width:600px){header{padding:14px 4%}nav{justify-content:center}.nav-links{justify-content:center;gap:12px}.hero{min-height:480px;padding:65px 6%}section{padding:55px 5%}.card{padding:20px}.admin-wrap{padding:16px}}
-</style></head><body>
-<header><nav><a class="logo" href="#home">LUMINOX7</a><div class="nav-links">
-<a href="#home">HOME</a><a href="#tournament">TOURNAMENT</a><a href="#leaderboard">RANKING</a><a href="#schedule">SCHEDULE</a><a href="#register">REGISTER</a><a href="#contact">CONTACT</a><a href="#admin">ADMIN</a>
-</div></nav></header>
-<section class="hero" id="home"><div class="hero-content"><div class="tag">WELCOME TO LUMINOX7 ESPORTS</div><h1>LEVEL UP<br>YOUR <span>GAME.</span></h1><p>Enter the arena. Challenge the best players. Show your skills and become a legend. Your esports journey starts here.</p><a href="#tournament" class="btn">EXPLORE TOURNAMENT</a><a href="#register" class="btn btn-outline">JOIN THE ARENA</a></div></section>
-<section><div class="section-title"><h2>OUR ARENA</h2><p>Everything for competitive gaming</p></div><div class="cards">
-<div class="card"><div class="icon">🏆</div><h3>Tournaments</h3><p>Join exciting Free Fire esports competitions.</p></div><div class="card"><div class="icon">⚡</div><h3>Top Players</h3><p>Discover the best players in our leaderboard.</p></div><div class="card"><div class="icon">🎮</div><h3>Community</h3><p>Connect with fellow gamers and compete together.</p></div></div></section>
-<section id="tournament"><div class="section-title"><h2>FREE FIRE TOURNAMENT</h2><p>Enter the battlefield</p></div><div class="tournament"><div class="tag">UPCOMING EVENT</div><h3>LUMINOX7 BATTLE ARENA</h3><p>Compete with other players and prove your skills.</p><div class="details">
-<div class="detail"><strong>Solo / Squad</strong>Mode</div><div class="detail"><strong>Custom</strong>Match Type</div><div class="detail"><strong>Online</strong>Platform</div><div class="detail"><strong>Coming Soon</strong>Date</div></div>
-<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZRKGfaKoizgXTnZUUyr3b8GAKoSO2xMLb9KG-v3TccyUxMQ/viewform" target="_blank" rel="noopener noreferrer">Register Now</a></div></section>
-<section id="leaderboard"><div class="section-title"><h2>LEADERBOARD</h2><p>Top ranked players</p></div><div class="table-wrap"><table><thead><tr><th>RANK</th><th>PLAYER</th><th>POINTS</th></tr></thead><tbody id="leaderboard-data"><tr><td colspan="3">Loading...</td></tr></tbody></table></div></section>
-<section id="schedule"><div class="section-title"><h2>MATCH SCHEDULE</h2><p>Upcoming esports events</p></div><div class="table-wrap"><table><thead><tr><th>Match</th><th>Date</th><th>Time</th><th>Team 1</th><th>Team 2</th><th>Status</th><th>Result</th></tr></thead><tbody id="schedule-data"><tr><td colspan="7">Loading...</td></tr></tbody></table></div></section>
-<section id="register"><div class="section-title"><h2>PLAYER REGISTRATION</h2><p>Join the LUMINOX7 arena</p></div><div class="tournament"><p>Complete the official LUMINOX7 registration form. Your registration will be saved to the linked response sheet.</p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZRKGfaKoizgXTnZUUyr3b8GAKoSO2xMLb9KG-v3TccyUxMQ/viewform" target="_blank" rel="noopener noreferrer">OPEN REGISTRATION FORM</a></div></section>
-<section id="contact"><div class="section-title"><h2>CONTACT US</h2><p>Connect with LUMINOX7</p></div><div class="contact"><div class="card"><h3>LUMINOX7 ESPORTS</h3><p>For tournament updates and enquiries, contact our team.</p><p style="margin-top:15px">Email: Add your email here</p><p>Facebook: Add your page link here</p></div></div></section>
-<section id="admin"><div class="section-title"><h2>🔐 LUMINOX7 ADMIN PANEL</h2><p>Authorized administrator access only</p></div><div class="admin-wrap">
-<div id="admin-login"><h3>Admin Login</h3><div class="admin-form"><input id="admin-email" type="email" placeholder="Admin email" autocomplete="username"><input id="admin-password" type="password" placeholder="Password" autocomplete="current-password"><button class="btn" id="login-btn" type="button">LOGIN</button><p class="admin-status" id="login-message" aria-live="polite"></p></div></div>
-<div id="admin-dashboard" class="hidden"><div class="admin-toolbar"><div><h3>Dashboard</h3><p class="note" id="admin-welcome">Signed in</p></div><button class="btn btn-outline small-btn" id="logout-btn" type="button">LOG OUT</button></div>
-<div class="tournament"><h3>Player Registration Database</h3><p>Open the private Google Sheet to view registration responses.</p><a class="btn" href="https://docs.google.com/spreadsheets/d/1qkXjYdJOk04Yw80j_tSoAbY7wJFgfd9lOBER9wy1Xyw/edit" target="_blank" rel="noopener noreferrer">OPEN PRIVATE PLAYER DATABASE</a></div><p class="admin-status" id="dashboard-message" aria-live="polite"></p></div>
-</div></section>
-<footer><strong>LUMINOX7</strong><p>Gaming Beyond Limits.</p><p>© 2026 LUMINOX7. All rights reserved.</p></footer>
-<script>
-const leaderboardCSV="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgYSA6PQez7a80NhpyQeg5mWgUh8eFR_fapzvK1qcFc4iQgUQ9WcQlnI8wK65NzG35g7lLwZ2ltPu7/pub?gid=268484019&single=true&output=csv";
-const scheduleCSV="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgYSA6PQez7a80NhpyQeg5mWgUh8eFR_fapzvK1qcFc4iQgUQ9WcQlnI8wK65NzG35g7lLwZ2ltPu7/pub?gid=2126909306&single=true&output=csv";
-function parseCSVLine(line){return line.split(",").map(v=>v.replace(/^"|"$/g,"").replace(/""/g,'"'))}
-async function loadCSV(url,targetId,colCount){const target=document.getElementById(targetId);try{const response=await fetch(url);if(!response.ok)throw new Error("CSV load failed");const csv=await response.text();const rows=csv.trim().split(/\r?\n/).slice(1).filter(Boolean);target.replaceChildren();rows.forEach(line=>{const tr=document.createElement("tr");parseCSVLine(line).slice(0,colCount).forEach(value=>{const td=document.createElement("td");td.textContent=value;tr.appendChild(td)});target.appendChild(tr)});if(!rows.length){const tr=document.createElement("tr"),td=document.createElement("td");td.colSpan=colCount;td.textContent="No records yet";tr.appendChild(td);target.appendChild(tr)}}catch(e){target.textContent="Unable to load data right now"}}
-loadCSV(leaderboardCSV,"leaderboard-data",3);loadCSV(scheduleCSV,"schedule-data",7);
-</script>
-<script type="module">
-import {initializeApp} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
-import {getAuth,signInWithEmailAndPassword,signOut,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
-const firebaseConfig={apiKey:"AIzaSyC6o0bsJasjb1pGQ4DIURgBc1zOGplimQM",authDomain:"luminox7-admin.firebaseapp.com",projectId:"luminox7-admin",storageBucket:"luminox7-admin.firebasestorage.app",messagingSenderId:"978493775972",appId:"1:978493775972:web:6f78ebeef813337319ff71"};
-const ADMIN_UID="pULHC2odwVaiuteKwWth6O2VXzq1";
-const app=initializeApp(firebaseConfig),auth=getAuth(app);
-const loginBox=document.getElementById("admin-login"),dashboard=document.getElementById("admin-dashboard");
-const loginMessage=document.getElementById("login-message"),dashboardMessage=document.getElementById("dashboard-message"),loginButton=document.getElementById("login-btn");
-loginButton.addEventListener("click",async()=>{const email=document.getElementById("admin-email").value.trim(),password=document.getElementById("admin-password").value;if(!email||!password){loginMessage.textContent="Enter your admin email and password.";return}loginButton.disabled=true;loginMessage.textContent="Signing in...";try{await signInWithEmailAndPassword(auth,email,password);loginMessage.textContent=""}catch(error){loginMessage.textContent="Login failed. Check your email and password."}finally{loginButton.disabled=false}});
-document.getElementById("logout-btn").addEventListener("click",async()=>{try{await signOut(auth);dashboardMessage.textContent="Logged out."}catch(error){dashboardMessage.textContent="Could not log out. Please try again."}});
-onAuthStateChanged(auth,async user=>{if(user&&user.uid===ADMIN_UID){loginBox.classList.add("hidden");dashboard.classList.remove("hidden");document.getElementById("admin-welcome").textContent="Signed in as "+(user.email||"authorized admin");dashboardMessage.textContent="Admin access verified. Your private database link is ready."}else{dashboard.classList.add("hidden");loginBox.classList.remove("hidden");if(user){try{await signOut(auth)}catch(error){}loginMessage.textContent="This account is not authorized as the site administrator."}}});
-</script></body></html>
+:root {
+  --green:#00ff88;
+  --dark:#050908;
+  --panel:#101a15;
+  --muted:#a5b5ac;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;
+  background:var(--dark);
+  color:white;
+}
+header{
+  padding:20px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #16452f;
+  position:sticky;top:0;
+  background:#050908f2;
+  z-index:10;
+}
+.logo{font-size:25px;font-weight:900;color:var(--green)}
+nav a{
+  color:white;text-decoration:none;
+  margin-left:18px;font-size:14px;
+}
+nav a:hover{color:var(--green)}
+.hero{
+  min-height:520px;
+  padding:100px 8%;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  text-align:center;
+  background:radial-gradient(ellipse at center,#123d28 0%,#050908 65%);
+}
+.hero h1{
+  font-size:clamp(38px,8vw,75px);
+  color:var(--green);
+  text-shadow:0 0 25px #00ff8870;
+}
+.hero p{color:var(--muted);margin:20px 0;line-height:1.7}
+.btn{
+  display:inline-block;
+  padding:14px 25px;
+  margin:8px;
+  border-radius:7px;
+  background:var(--green);
+  color:#001b0e;
+  text-decoration:none;
+  font-weight:bold;
+  border:1px solid var(--green);
+}
+.btn.outline{background:transparent;color:var(--green)}
+section{padding:65px 7%;text-align:center}
+.section-title{
+  font-size:32px;color:var(--green);
+  margin-bottom:30px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+.card{
+  background:var(--panel);
+  border:1px solid #1b5136;
+  padding:30px 20px;
+  border-radius:12px;
+  transition:.2s;
+}
+.card:hover{transform:translateY(-5px);border-color:var(--green)}
+.card h3{color:var(--green);margin-bottom:15px}
+.card p{color:var(--muted);line-height:1.7}
+.rules{
+  max-width:750px;margin:auto;
+  text-align:left;line-height:2;
+  color:var(--muted);
+}
+.sheet{
+  width:100%;height:500px;
+  border:1px solid #1b5136;
+  border-radius:10px;
+  background:white;
+}
+footer{
+  padding:30px;text-align:center;
+  color:var(--muted);
+  border-top:1px solid #16452f;
+}
+footer span{color:var(--green)}
+@media(max-width:650px){
+  header{flex-direction:column;gap:15px}
+  nav a{margin:0 6px;font-size:12px}
+  .hero{min-height:430px}
+  section{padding:50px 5%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">LUMINOX7</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#tournament">Tournament</a>
+    <a href="#register">Register</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#leaderboard">Leaderboard</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <h1>LUMINOX7</h1>
+  <h2>FC MOBILE ESPORTS</h2>
+  <p>Play Smart. Compete Hard. Become a Champion.</p>
+  <div>
+    <a class="btn" href="#register">JOIN TOURNAMENT</a>
+    <a class="btn outline" href="#tournament">EXPLORE</a>
+  </div>
+</div>
+
+<section id="tournament">
+  <h2 class="section-title">TOURNAMENT MODES</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>H2H MODE</h3>
+      <p>Face-to-face football battles. Show your skills and fight for the top position.</p>
+    </div>
+    <div class="card">
+      <h3>VS ATTACK MODE</h3>
+      <p>Fast-paced attacking matches. Score more goals and climb the leaderboard.</p>
+    </div>
+  </div>
+</section>
+
+<section id="register">
+  <h2 class="section-title">PLAYER REGISTRATION</h2>
+  <div class="card">
+    <h3>JOIN LUMINOX7</h3>
+    <p>Choose H2H or VS Attack mode in the registration form.</p>
+    <br>
+    <a class="btn"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSc7NjyavVLAwxdXbhZm-NGkco20fN3hFgu8z8SKsI_bj3IAvg/viewform"
+       target="_blank" rel="noopener">
+       REGISTER NOW
+    </a>
+  </div>
+</section>
+
+<section id="schedule">
+  <h2 class="section-title">MATCH SCHEDULE</h2>
+  <p style="color:#a5b5ac;margin-bottom:20px">
+    Upcoming tournament fixtures will be displayed here.
+  </p>
+  <a class="btn outline"
+     href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSRPZrfGyGgfKAvSdieoVLbvsrye2QUoLEvxLDISmmHrYqpF-cLG5z7C64plnjxRNwt_jj2Zz6bil2P/pubhtml"
+     target="_blank" rel="noopener">
+     VIEW PUBLISHED SHEETS
+  </a>
+</section>
+
+<section id="leaderboard">
+  <h2 class="section-title">LEADERBOARD</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>H2H LEADERBOARD</h3>
+      <p>Check player rankings and points.</p>
+    </div>
+    <div class="card">
+      <h3>VS ATTACK LEADERBOARD</h3>
+      <p>Check VS Attack player rankings.</p>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <h2 class="section-title">TOURNAMENT RULES</h2>
+  <div class="rules">
+    <p>1. Submit correct player information.</p>
+    <p>2. Select your tournament mode carefully.</p>
+    <p>3. Follow the match schedule.</p>
+    <p>4. Respect all players and tournament admins.</p>
+    <p>5. Follow the official tournament decisions.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>LUMINOX7</span> FC Mobile Esports</p>
+  <p>Play Smart. Stay Loyal. Be Legendary.</p>
+</footer>
+
+</body>
+</html>
